@@ -44,11 +44,30 @@ function getPageLink($page) {
     return $link;
 }
 
+// Get actual page
+function getActualPage() {
+    $actualPage = 'homepage';
+    if(isset($_GET['page']) && !empty($_GET['page'])) {
+        $actualPage = $_GET['page'];
+    }
+    return $actualPage;
+}
+
 // Get page title
 function getPageTitle($page) {
     global $config;
+    if(!isset($page)) {
+        $page = getActualPage();
+    }
     $link = $config['pages'][$page]['title'];
     return $link;
+}
+
+// Get page info
+function getPageInfo($page, $type) {
+    global $config;
+    $type = $config['pages'][$page][$type];
+    return $type;
 }
 
 // Get source URL

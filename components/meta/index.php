@@ -1,7 +1,7 @@
 <?php
 if(!isPage404()) {
-    $description = '';
-    $keywords = '';
+    $description = getPageInfo(getActualPage(), 'description');
+    $keywords = getPageInfo(getActualPage(), 'keywords');
     $author = 'Pavel Krejčí | www.delamweby.cz (c) 2018';
     ?>
     <meta name="description" content="<?php echo $description; ?>">

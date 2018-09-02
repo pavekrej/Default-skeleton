@@ -24,7 +24,7 @@ include_once 'app/langs/' . $config['language'] . '.php';
     <link href="<?php echo getThemeUrl(); ?>humans.txt" rel="author">
     <?php getComponent('meta'); ?>
 </head>
-<body class="no-js <?php echo $config['language']; ?>">
+<body class="no-js <?php echo $config['language'] . ' ' . getActualPage(); ?>">
     <script>document.body.className=document.body.className.replace(/no-js/,'js');</script>
     <?php
     // Header
@@ -35,7 +35,7 @@ include_once 'app/langs/' . $config['language'] . '.php';
     // Content
     $template = 'homepage';
     if(isset($_GET['page']) && !empty($_GET['page'])) {
-        $template = $_GET['page'];
+        $template = getActualPage();
     }
     ?>
     <div class="content">
