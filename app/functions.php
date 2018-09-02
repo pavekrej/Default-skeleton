@@ -46,7 +46,8 @@ function getPageLink($page) {
 
 // Get actual page
 function getActualPage() {
-    $actualPage = 'homepage';
+    global $config;
+    $actualPage = $config['homepage'];
     if(isset($_GET['page']) && !empty($_GET['page'])) {
         $actualPage = $_GET['page'];
     }
