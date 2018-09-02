@@ -1,0 +1,2 @@
+/* Components */
+// content/index.js
